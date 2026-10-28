@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# GoFood
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GoFood is a food-ordering web application with a React frontend and an Express/MongoDB backend. Users can browse food and categories, create an account or log in, add items to a cart, and view their orders.
 
-## Available Scripts
+## Tech stack
 
-In the project directory, you can run:
+- React and React Router
+- Bootstrap and Material-UI
+- Node.js and Express
+- MongoDB with Mongoose
 
-### `npm start`
+## Run the frontend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+From the repository root:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+npm start
+```
 
-### `npm test`
+The development server opens at [http://localhost:3000](http://localhost:3000).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Run the backend locally
 
-### `npm run build`
+The backend is in the `backend` directory and listens on port `5000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Configure a MongoDB connection in `backend/db.js`. The database should contain the `food_items` and `foodCategory` collections.
+2. Install backend dependencies and start the server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   cd backend
+   npm install
+   node index.js
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The frontend currently sends API requests to the deployed service at `https://speedyeat.onrender.com`. To use a local backend, update those API URLs in the frontend to point to `http://localhost:5000`.
 
-### `npm run eject`
+## Available frontend scripts
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Run these commands from the repository root:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Command | Description |
+| --- | --- |
+| `npm start` | Start the development server |
+| `npm test` | Run tests in watch mode |
+| `npm run build` | Create a production build |
